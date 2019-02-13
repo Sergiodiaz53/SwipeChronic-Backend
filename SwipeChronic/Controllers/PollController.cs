@@ -5,11 +5,6 @@ using SwipeChronic.ViewModel;
 using SwipeChronic.Models;
 using SwipeChronic.Services.Interfaces;
 
-//Recibir /Enviar 
-
-//(tontos -> no logica) 
-//Como el Repository pero para el cliente
-
 namespace SwipeChronic.Controllers
 {
     [Route("api/[controller]")]

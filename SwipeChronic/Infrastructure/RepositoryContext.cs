@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using SwipeChronic.Models;
 
-//Los DBsets traducen lo que escribo a consola SQL, se comunican con la BD y transforman la respuesta en entidades.
-
 namespace SwipeChronic.Infrastructure
 {
     public class RepositoryContext: DbContext
