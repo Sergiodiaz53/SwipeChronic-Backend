@@ -6,10 +6,26 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Entities\Constants\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Interfaces\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+    <Compile Remove="Api\ViewModel\EmptyClass.cs" />
+    <Compile Remove="Api\ViewModel\QuestionRegistration.cs" />
+    <Compile Remove="ViewModel\QuestionViewModel.cs" />
+    <Compile Remove="Controllers\IMapper.cs" />
+  </ItemGroup>
 </Project>

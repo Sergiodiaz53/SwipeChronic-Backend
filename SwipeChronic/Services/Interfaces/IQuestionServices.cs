@@ -1,10 +1,11 @@
-﻿using System;
+﻿using SwipeChronic.Models;
+using System;
+using System.Threading.Tasks;
+
 namespace SwipeChronic.Services.Interfaces
 {
-    public class IQuestionServices
+    public interface IQuestionServices
     {
-        public IQuestionServices()
-        {
-        }
+        Task Register(Question question);
     }
 }

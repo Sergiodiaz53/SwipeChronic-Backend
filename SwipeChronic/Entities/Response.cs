@@ -8,9 +8,10 @@ namespace SwipeChronic.Models
         public int Session;
         public Choice Choice { get; set; }
 
-        //ForeignKey
+        //ForeignKey 
         public int QuestionId { get; set; }
         public Question Question { get; set; }
 
+        //TODO [ForeignKey]
     }
 }
