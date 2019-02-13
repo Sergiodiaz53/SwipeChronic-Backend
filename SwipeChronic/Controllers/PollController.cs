@@ -13,7 +13,15 @@ namespace SwipeChronic.Controllers
         private readonly IMapper _mapper;
         private readonly IQuestionServices _questionServices;
 
-        //GET: api/PollController/question
+        public PollController(
+           IMapper mapper,
+           IQuestionServices questionServices)
+        {
+            _mapper = mapper;
+            _questionServices = questionServices;
+        }
+
+        //GET: api/PollController/RegisterQuestion
         [HttpPost("question")]
         public async Task<IActionResult> RegisterQuestion ([FromBody] QuestionViewModel questionViewModel)
         {   
