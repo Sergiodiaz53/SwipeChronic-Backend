@@ -7,5 +7,6 @@ namespace SwipeChronic.Services.Interfaces
     public interface IQuestionServices
     {
         Task Register(Question question);
+        Task<Question> GetRandomQuestion();
     }
 }

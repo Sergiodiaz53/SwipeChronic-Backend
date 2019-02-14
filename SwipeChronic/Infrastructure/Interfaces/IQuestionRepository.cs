@@ -7,10 +7,10 @@ namespace SwipeChronic.Infrastructure.Interfaces
 {
     public interface IQuestionRepository : IDisposable
     {
-        IEnumerable<Question> GetQuestions();
-        Question GetRandomQuestion();
-        Task InsertQuestion(Question question);
-        Task DeleteQuestion(int questionID);
-        Task Save();
+        Task<Question> GetQuestionbyIdAsync(int id);
+        Task CreateQuestionAsync(Question question);
+        Task DeleteQuestionById(int id);
+        Task<Question> GetRandomQuestion();
+        Task<int> SaveChangesAsync();
     }
 }

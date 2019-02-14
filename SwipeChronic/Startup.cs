@@ -12,6 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SwipeChronic.Infrastructure;
+using SwipeChronic.Services.Interfaces;
+using SwipeChronic.Services;
+using AutoMapper;
+using SwipeChronic.Infrastructure.Interfaces;
 
 //Añadir automapper (o en program.cs) instalar DOT NET STANDARD
 
@@ -33,6 +37,10 @@ namespace SwipeChronic
 
             services.AddDbContext<RepositoryContext>(options => {options.UseSqlServer(connectionString);});
             services.AddMvc();
+            services.AddTransient<IQuestionServices, QuestionServices>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddAutoMapper();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

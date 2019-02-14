@@ -17,10 +17,14 @@ namespace SwipeChronic.Services
 
         public async Task Register(Question question)
         {
-            await _questionRepository.InsertQuestion(question);
-            await _questionRepository.Save();
+            await _questionRepository.CreateQuestionAsync(question);
+            await _questionRepository.SaveChangesAsync();
         }
 
-        //Dame 10 preguntas
+        public async Task<Question> GetRandomQuestion()
+        {
+            return await _questionRepository.GetRandomQuestion();
+        }
+
     }
 }

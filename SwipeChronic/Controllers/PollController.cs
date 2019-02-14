@@ -21,13 +21,20 @@ namespace SwipeChronic.Controllers
             _questionServices = questionServices;
         }
 
-        //GET: api/PollController/RegisterQuestion
+        //POST: api/poll/question
         [HttpPost("question")]
-        public async Task<IActionResult> RegisterQuestion ([FromBody] QuestionViewModel questionViewModel)
+        public async Task<IActionResult> RegisterQuestion([FromForm] QuestionViewModel questionViewModel)
         {   
             var question = _mapper.Map<Question>(questionViewModel);
             await _questionServices.Register(question);
             return Ok();
+        }
+
+        //POST: api/poll/question
+        [HttpGet("question")]
+        public async Task<Question> GetRandomQuestion()
+        {
+            return await _questionServices.GetRandomQuestion();
         }
     }
 }
