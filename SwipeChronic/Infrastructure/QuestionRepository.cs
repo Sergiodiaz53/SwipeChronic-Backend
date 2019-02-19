@@ -3,6 +3,7 @@ using SwipeChronic.Models;
 using System.Threading.Tasks;
 using System.Linq;
 using SwipeChronic.Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace SwipeChronic.Infrastructure
 {
@@ -33,11 +34,9 @@ namespace SwipeChronic.Infrastructure
             _context.Remove(question);
         }
 
-        public async Task<Question> GetRandomQuestion()
+        public async Task<int> GetQuestionsCount()
         {
-            Random rand = new Random();
-            int id = rand.Next(0, _context.Questions.Count());
-            return await _context.Questions.FindAsync(id);
+            return await _context.Questions.CountAsync();
         }
 
         public async Task<int> SaveChangesAsync()

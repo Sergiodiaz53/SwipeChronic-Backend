@@ -23,8 +23,8 @@ namespace SwipeChronic.Controllers
 
         //POST: api/poll/question
         [HttpPost("question")]
-        public async Task<IActionResult> RegisterQuestion([FromForm] QuestionViewModel questionViewModel)
-        {   
+        public async Task<IActionResult> RegisterQuestion([FromBody] QuestionViewModel questionViewModel)
+        {
             var question = _mapper.Map<Question>(questionViewModel);
             await _questionServices.Register(question);
             return Ok();
@@ -32,9 +32,9 @@ namespace SwipeChronic.Controllers
 
         //POST: api/poll/question
         [HttpGet("question")]
-        public async Task<Question> GetRandomQuestion()
+        public async Task<IActionResult> GetRandomQuestion()
         {
-            return await _questionServices.GetRandomQuestion();
+            return Ok(await _questionServices.GetRandomQuestion());
         }
     }
 }

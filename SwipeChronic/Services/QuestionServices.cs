@@ -23,7 +23,12 @@ namespace SwipeChronic.Services
 
         public async Task<Question> GetRandomQuestion()
         {
-            return await _questionRepository.GetRandomQuestion();
+            Random rand = new Random();
+            int id = rand.Next(1, await _questionRepository.GetQuestionsCount());
+
+            Question question = await _questionRepository.GetQuestionbyIdAsync(id);
+
+            return question;
         }
 
     }

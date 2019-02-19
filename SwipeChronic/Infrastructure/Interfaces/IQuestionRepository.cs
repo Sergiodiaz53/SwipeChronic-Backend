@@ -10,7 +10,7 @@ namespace SwipeChronic.Infrastructure.Interfaces
         Task<Question> GetQuestionbyIdAsync(int id);
         Task CreateQuestionAsync(Question question);
         Task DeleteQuestionById(int id);
-        Task<Question> GetRandomQuestion();
         Task<int> SaveChangesAsync();
+        Task<int> GetQuestionsCount();
     }
 }
